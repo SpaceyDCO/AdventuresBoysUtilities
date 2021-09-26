@@ -1,0 +1,12 @@
+main: com.adventuresboys.plugin.Main
+name: AdventuresBoysUtilities
+version: 1.0
+author: SpaceyDCO
+description: Plugin diseñado para diversas mecánicas de AdventuresBoys.
+commands:
+  abu:
+    description: .
+    usage: /abu
+  abu add:
+     description: agregar
+     usage: /abu add
