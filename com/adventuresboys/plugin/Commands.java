@@ -99,8 +99,13 @@ public class Commands implements CommandExecutor{
 				return true;
 			}
 		}
+		if(args[0].equalsIgnoreCase("reload")) {
+			config.reload();
+			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aConfig recargada con éxito."));
+			return true;
+		}
 		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cEse comando no existe!"));
-		return false;
+		return true;
 	}
 	public static boolean checkEventBlock(String[] arrayBlock, String[] arrayBlockCheck) {
 		if(arrayBlock[0].equals(arrayBlockCheck[0])) {
@@ -116,7 +121,7 @@ public class Commands implements CommandExecutor{
 		}
 		return false;
 	}
-	public String blockConfig(Block block) {
+	public static String blockConfig(Block block) {
 		int x = block.getX();
 		int y = block.getY();
 		int z = block.getZ();
