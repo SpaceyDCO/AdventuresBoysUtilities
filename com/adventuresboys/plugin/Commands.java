@@ -12,13 +12,13 @@ import org.bukkit.entity.Player;
 public class Commands implements CommandExecutor{
 	FileCreator config = Main.config;
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if(!sender.isOp() || !label.equalsIgnoreCase("abu") || !(sender instanceof Player)) {
-			return true;
-		}
+		if(!label.equalsIgnoreCase("abu") || !(sender instanceof Player)) return true;
 		if(args.length < 1) {
-			sender.sendMessage("ayuda");
+			CollectiblesInventory inv = new CollectiblesInventory((Player) sender);
+			inv.openInventory();
 			return true;
 		}
+		if(!sender.isOp()) return true;
 		if(args[0].equalsIgnoreCase("addBlock")) {
 			Block block = ((Player) sender).getTargetBlock(null, 5);
 			if(block.getType().name().equals("AIR")) {
